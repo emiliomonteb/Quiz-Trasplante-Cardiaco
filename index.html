@@ -96,7 +96,7 @@
 </head>
 <body>
     <h1>TEST DE CONOCIMIENTOS PARA PACIENTES CON TRASPLANTE CARDIACO</h1>
-    <h2>Servicio de Farmacia, Hospital H.P. La Fe, Valencia</h2>
+    <h2>Servicio de Farmacia, Hospital U.P. La Fe, Valencia</h2>
 
     <div class="tabs">
         <div class="tab active" data-tab="patient-data">Datos del paciente</div>
@@ -149,7 +149,7 @@
             <button id="printReport">Imprimir informe</button>
             <div id="reportContent">
                 <h1>TEST DE CONOCIMIENTOS PARA PACIENTES CON TRASPLANTE CARDIACO</h1>
-                <h2>Servicio de Farmacia, Hospital H.P. La Fe, Valencia</h2>
+                <h2>Servicio de Farmacia, Hospital U.P. La Fe, Valencia</h2>
                 
                 <h3>Datos del Paciente</h3>
                 <p><strong>Nombre:</strong> <span id="reportName"></span></p>
@@ -767,7 +767,7 @@
                 }
             });
 
-            const timeUsed = 180 - timeLeft;
+            const timeUsed = 120 - timeLeft;
             const score = calculateScore(correctAnswers, timeUsed);
 
             const resultsDiv = document.getElementById('results');
@@ -799,7 +799,7 @@
                 }
             });
 
-            const timeUsed = 180 - timeLeft;
+            const timeUsed = 120 - timeLeft;
             const score = calculateScore(correctAnswers, timeUsed);
 
             document.getElementById('reportCorrectAnswers').textContent = correctAnswers;
@@ -822,6 +822,7 @@
                 questionsHtml += `
                     <p><strong>Pregunta ${index + 1}:</strong> ${question.pregunta}</p>
                     <p><strong>Respuesta seleccionada:</strong> ${selectedAnswer || 'No respondida'}</p>
+                    <p><strong>Respuesta correcta:</strong> ${!isCorrect ? question.opciones[question.respuestaCorrecta] : "Correcto"}</p>                    
                     <p><strong>Es correcta:</strong> ${isCorrect ? 'Sí' : 'No'}</p>
                     <br>
                 `;
